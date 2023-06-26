@@ -4,32 +4,16 @@ import { BsFillMoonStarsFill } from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import Image from 'next/image';
 import peter_chen_avatar2 from '../public/peter_chen_avatar2.png';
-import css3 from '../public/css3.png';
-import git from '../public/git.png';
-import github from '../public/github.png';
-import html5 from '../public/html5.png';
-import javascript from '../public/javascript.png';
-import react from '../public/react.png';
-import restapi from '../public/restapi.png';
-import vscode from '../public/vscode.png';
-import website from '../public/website.png';
-import tailwind from '../public/tailwind.png';
-import mongodb from '../public/mongodb.png';
-import next from '../public/next.png';
-import web1 from '../public/web1.png';
-import web2 from '../public/web2.png';
-import web3 from '../public/web3.png';
-import web4 from '../public/web4.png';
-import web5 from '../public/web5.png';
-import web6 from '../public/web6.png';
 import {useState, useRef} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import { useRouter } from 'next/router';
 import {motion as m} from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import InsertLinkIcon from '@mui/icons-material/InsertLink';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import projects from './projects';
+import Card from './Card';
+import SingleIcon from './singleIcon';
+import icons from './icons';
 
 
 
@@ -87,6 +71,30 @@ export default function Home() {
           console.log(error.text);
       });
   };
+    //create icons
+    function createIcon(icon) {
+      return (
+        <SingleIcon 
+          key={icon.id}
+          image={icon.image}
+          name={icon.name}
+        />
+      )
+    };
+    //create cards
+    function createCard(project) {
+      return (
+        <Card 
+        key={project.id}
+        image={project.image}
+        name={project.name}
+        description={project.description}
+        techStack={project.techStack}
+        siteURL={project.siteURL}
+        codeURL={project.codeURL}
+        />
+      )
+    };
 
   return (
     <div className={darkMode && "dark"}>
@@ -145,7 +153,6 @@ export default function Home() {
             
             </h2>
           </div>
-          
           <div className='relative mx-auto rounded-full w-80 h-80 my-20 overflow-hidden md:h-96 md:w-96'>
             <Image src={peter_chen_avatar2}/>
           </div>
@@ -154,54 +161,7 @@ export default function Home() {
           <div className='container mx-auto text-center my-20'>
             <h3 className='text-3xl pt-1 text-gray-800 dark:text-gray-400'>My Toolbox & Things I Can Do</h3>
           <div className="flex flex-wrap justify-center items-center my-20">
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8 ">
-             <Image src={html5} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>HTML5</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={css3} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>CSS3</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={javascript} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>JavaScript</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={react} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>React</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={git} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Git</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={github} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Github</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={restapi} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Restful APIs</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={tailwind} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Tailwind</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={mongodb} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>MongoDB</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={next} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Next.js</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={vscode} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>VS Code</p>
-           </div>
-           <div className="w-1/3 md:w-1/4 lg:w-1/6 p-8">
-             <Image src={website} className='w-12 mx-auto contrast-50 dark:contrast-0'/>
-            <p className='mt-2 text-md text-gray-500 dark:text-gray-400'>Responsive Websites</p>
-           </div>
+          {icons.map(createIcon)}
           </div>
           </div> 
         </section>
@@ -216,176 +176,7 @@ export default function Home() {
         </div>
         {/* card */} 
         <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
-        {/* web1 */} 
-          <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web1} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>Pokemon Wiki</h3>
-              <p className='text-sm mt-4 px-24'>I developed a comprehensive Pokemon encyclopedia utilizing the Pokemon API and React.js framework.</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>React</p>
-                <p className='text-sm px-1 ml-2 bg-gray-900 rounded'>API</p>
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://team-pickle-pokemonwiki.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/pokemonAPI" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-           {/* web2 */} 
-          <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web2} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>Advanced To-do List</h3>
-              <p className='text-sm mt-4 px-24'>This is a robust todo list application with comprehensive features such as adding, deleting, and changing the status of items. It comes with a filtering mechanism to efficiently organize tasks based on their status.</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>React</p>
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://team-pickle-better-to-do.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/better_to_do" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-
-          {/* web3 */} 
-          <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web3} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>"Craving" - Recipe for Tonight</h3>
-              <p className='text-sm mt-4 px-24'>
-I have developed a food recipe application utilizing a recipe API to fetch and display recipe data in an elegant card-based system. This project showcases my expertise as a frontend developer in creating interactive and visually appealing user interfaces for culinary enthusiasts.</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>React</p>
-                <p className='text-sm px-1 ml-2 bg-gray-900 rounded'>API</p>
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://teampickle-react-recipe-app.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/react-recipe-app" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-         {/* web4 */} 
-         <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web4} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>Calculator with React</h3>
-              <p className='text-sm mt-4 px-24'>I have developed a web-based calculator utilizing React during the initial stages of my learning journey. This project represents my commitment to expanding my skills as a front-end developer and demonstrates my ability to apply React concepts in practical applications.</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>React</p>
-                
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://team-pickle-calculator.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/calculator-app" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-
-        {/* web5 */} 
-        <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web5} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>A Cocktail Database</h3>
-              <p className='text-sm mt-4 px-24'> This is another project that I worked with APIs. It is an advanced cocktail database with integrated routing capabilities for seamless navigation between pages. Each cocktail variety is elegantly showcased on a comprehensive individual card.</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>React</p>
-                <p className='text-sm px-1 ml-2 bg-gray-900 rounded'>API</p>
-                
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://team-pickle-cocktail-pedia.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/cocktail-pedia" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-          
-          {/* web6 */} 
-        <div className='basis-1/3 flex-1'>
-          <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={web6} className="rounded-lg object-cover shadow-lg " 
-            width={'100%'} height={'100%'} layout="responsive"/>
-            <div 
-            className="absolute top-0 left-0 right-0 bottom-0 z-10
-            flex flex-col items-center justify-center
-            bg-gray-800 bg-opacity-80 text-white text-center opacity-0 group-hover:opacity-100
-            ">
-            <div className='flex flex-col items-center justify-center'>
-              <h3 className='text-2xl mt-10'>The Simon Game</h3>
-              <p className='text-sm mt-4 px-24'> A reacreation of the classic Simon Game using vanilla javascript, jQuery and DOM manipulation. </p>
-              <p className='text-base mt-4'>Tech Stack:</p>
-              <div className="flex mx-4 mt-2">
-                <p className='text-sm px-1 bg-gray-900 rounded'>Javascript</p>
-                <p className='text-sm px-1 ml-2 bg-gray-900 rounded'>jQuery</p>
-                
-              </div>
-        {/* on hover */}
-            </div>
-                <div className='flex justify-center '>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://team-pickle-simon-game.netlify.app/" target="_blank" rel="noopener noreferrer">Visit the site<InsertLinkIcon className='ml-2'/></a>
-                <a className='flex px-3 py-1 my-8 mx-4 bg-cyan-600 rounded' href="https://github.com/nonsense-bucket/simon-game" target="_blank" rel="noopener noreferrer">See the code<GitHubIcon className='ml-2'/></a>
-                </div>
-            </div>
-          </div>
-          </div>
-          
-          
-          
+        {projects.map(createCard)}
         </div>
         </section>
         
