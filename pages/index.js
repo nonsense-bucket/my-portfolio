@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import Image from 'next/image';
-import peter_chen_avatar2 from '../public/peter_chen_avatar2.png';
+import peter_chen_avatar from '../public/peter_chen_avatar.PNG';
 import {useState, useRef} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
@@ -158,7 +158,7 @@ export default function Home() {
             </h2>
           </div>
           <div className='relative mx-auto rounded-full w-80 h-80 my-20 overflow-hidden md:h-96 md:w-96'>
-            <Image src={peter_chen_avatar2}/>
+            <Image src={peter_chen_avatar} alt="avatar"/>
           </div>
         </section>
         <section>
