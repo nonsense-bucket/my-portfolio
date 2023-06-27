@@ -10,10 +10,10 @@ import * as Yup from 'yup';
 import { useRouter } from 'next/router';
 import {motion as m} from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import projects from './components/projects';
+import projects from '@/public/projects';
 import Card from './components/Card';
 import SingleIcon from './components/SingleIcon';
-import icons from './components/icons';
+import icons from '@/public/icons';
 
 
 
