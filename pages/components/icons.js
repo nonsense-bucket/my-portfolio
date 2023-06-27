@@ -1,15 +1,15 @@
-import css3 from '../public/css3.png';
-import git from '../public/git.png';
-import github from '../public/github.png';
-import html5 from '../public/html5.png';
-import javascript from '../public/javascript.png';
-import react from '../public/react.png';
-import restapi from '../public/restapi.png';
-import vscode from '../public/vscode.png';
-import website from '../public/website.png';
-import tailwind from '../public/tailwind.png';
-import mongodb from '../public/mongodb.png';
-import next from '../public/next.png';
+import css3 from '/public/css3.png';
+import git from '/public/git.png';
+import github from '/public/github.png';
+import html5 from '/public/html5.png';
+import javascript from '/public/javascript.png';
+import react from '/public/react.png';
+import restapi from '/public/restapi.png';
+import vscode from '/public/vscode.png';
+import website from '/public/website.png';
+import tailwind from '/public/tailwind.png';
+import mongodb from '/public/mongodb.png';
+import next from '/public/next.png';
 
 
 const icons = [
