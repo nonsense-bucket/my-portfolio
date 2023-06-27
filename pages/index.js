@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import Image from 'next/image';
-import peter_chen_avatar from '../public/peter_chen_avatar.PNG';
+import peter_chen_avatar from '../public/peter_chen_avatar.png'
 import {useState, useRef} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
