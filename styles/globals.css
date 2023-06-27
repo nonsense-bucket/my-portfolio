@@ -105,8 +105,8 @@ a {
 }
 
 @font-face{
-  font-family: "burtons";
-  src: url('../public/Burtons.otf');
+  font-family: "pacifico";
+  src: url('../public/Pacifico-Regular.ttf');
 }
 
 /* rotating text */

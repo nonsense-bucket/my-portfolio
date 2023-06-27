@@ -12,7 +12,7 @@ import {motion as m} from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import projects from './projects';
 import Card from './Card';
-import SingleIcon from './singleIcon';
+import SingleIcon from './SingleIcon';
 import icons from './icons';
 
 
@@ -71,6 +71,7 @@ export default function Home() {
           console.log(error.text);
       });
   };
+
     //create icons
     function createIcon(icon) {
       return (
@@ -81,6 +82,7 @@ export default function Home() {
         />
       )
     };
+
     //create cards
     function createCard(project) {
       return (
@@ -95,6 +97,8 @@ export default function Home() {
         />
       )
     };
+
+    //home page
 
   return (
     <div className={darkMode && "dark"}>
@@ -119,7 +123,7 @@ export default function Home() {
           fixed top-0 left-0 right-0 px-10
           md:px-20 lg:px-40
           z-50 bg-white dark:bg-zinc-800'>
-            <h1 className='text-2xl font-pacifico text-gray-800 dark:text-gray-600'>TeamPickle</h1>
+            <h1 className='text-2xl font-pacifico text-gray-800 dark:text-gray-400'>TeamPickle</h1>
             <ul className='flex items-center '>
               <li>
               <BsFillMoonStarsFill onClick={()=> setDarkMode(!darkMode)}className='cursor-pointer text-2xl text-gray-800 dark:text-white'/>
@@ -136,8 +140,8 @@ export default function Home() {
           </nav>          
           <div className='outer-headings flex text-center py-10'>
             <h2 className='text-3xl leading-relaxed md:leading-relaxed lg:leading-relaxed py-2 px-10 mt-20 text-cyan-600 font-normal md:text-4xl lg:text-5xl'>
-            Hi, I'm Peter! <br />
-            I'm a <span className='font-bold'>Mechanical Engineer turned Developer</span><br /> 
+            Hi, I&apos;m Peter! <br />
+            I&apos;m a <span className='font-bold'>Mechanical Engineer turned Developer</span><br /> 
             <div className="flex items-center pl-8 md:pl-40 lg:pl-60">
             and
             <div className="inner-headings text-left ml-4 my-auto">
@@ -169,13 +173,10 @@ export default function Home() {
         {/* portfolio */}
         <section>
         <div className='text-center'>
-          <h3 className='text-3xl py-1 text-gray-800 dark:text-gray-400'>Portfolio</h3>
-          <p className='text-md py-5 leading-8 text-gray-500 dark:text-gray-400'>
-            A Selection Of My Recent Work
-            </p>
+          <h3 className='text-3xl py-1 text-gray-800 dark:text-gray-400'>A Selection Of My Recent Work</h3>
         </div>
         {/* card */} 
-        <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
+        <div className='flex flex-col gap-10 py-20 lg:flex-row lg:flex-wrap'>
         {projects.map(createCard)}
         </div>
         </section>
@@ -187,7 +188,7 @@ export default function Home() {
         onSubmit={sendEmail} 
         className='bg-white dark:bg-zinc-600 flex rounded-lg  '>
           <div className='p-10 flex-1 text-gray-800 dark:text-gray-400'>
-            <h1 className='text-3xl pb-2'>Let's get in touch! 👋🏻 </h1>
+            <h1 className='text-3xl pb-2'>Let&apos;s get in touch! 👋🏻 </h1>
             <p className='text-lg '>
             Join my adventure from a Mechanical Engineer to Web Developer! 
             Find out what I have to offer to boost your business. </p>

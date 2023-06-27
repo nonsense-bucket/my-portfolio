@@ -7,7 +7,7 @@ function Card({id, image, name, description, techStack, siteURL, codeURL}){
         
         <div className='basis-1/3 flex-1'>
           <div className="relative group transition-transform duration-800 hover:scale-110 rounded-lg overflow-hidden">
-            <Image src={image} className="rounded-lg object-cover shadow-lg " 
+            <Image src={image} alt={image} className="rounded-lg object-cover shadow-lg " 
             width={'100%'} height={'100%'} layout="responsive"/>
             <div 
             className="absolute top-0 left-0 right-0 bottom-0 z-10
