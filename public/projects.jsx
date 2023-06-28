@@ -55,7 +55,7 @@ const projects = [
         id: 6,
         image: web6,
         name: "The Simon Game",
-        description: "A reacreation of the classic Simon Game using vanilla javascript, jQuery and DOM manipulation.",
+        description: "A recreation of the classic Simon Game using vanilla javascript, jQuery and DOM manipulation.",
         techStack: ["Javascript", "jQuery"],
         siteURL: "https://team-pickle-simon-game.netlify.app/",
         codeURL: "https://github.com/nonsense-bucket/simon-game"
