@@ -11,8 +11,8 @@ import { useRouter } from 'next/router';
 import {motion as m} from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import projects from '@/public/projects';
-import Card from './components/Card';
-import SingleIcon from './components/SingleIcon';
+import Card from '@/components/Card';
+import SingleIcon from '@/components/SingleIcon';
 import icons from '@/public/icons';
 
 
