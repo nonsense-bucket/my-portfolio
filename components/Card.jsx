@@ -16,7 +16,7 @@ function Card({id, image, name, description, techStack, siteURL, codeURL}){
             ">
             <div className='flex flex-col items-center justify-center'>
               <h3 className='text-2xl mt-10'>{name}</h3>
-              <p className='text-sm mt-4 px-24'>{description}</p>
+              <p className='hidden sm:block sm:text-sm sm:mt-4 sm:px-24'>{description}</p>
               <p className='text-base mt-4'>Tech Stack:</p>
               <div className="flex mx-4 mt-2">
                 {techStack.map((tech, index)=> (
