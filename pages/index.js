@@ -132,7 +132,7 @@ export default function Home() {
               <li>
               <a 
               className='bg-gradient-to-r from-cyan-400 to bg-sky-900 px-4 py-2 ml-8 rounded'
-              href="https://drive.google.com/uc?export=download&id=1IHB57WbbhjHb9-6te7-a09qRMdmUF021"
+              href="https://drive.google.com/uc?export=download&id=15zOVdXu-9j2biJSnRWSX6rMnWPHxkOZ3" 
               target="_blank" rel="noopener noreferrer">
               Resume
               </a>
