@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import Image from 'next/image';
 import peter_chen_avatar from '../public/peter_chen_avatar.png';
@@ -127,7 +127,9 @@ export default function Home() {
             <h1 className='text-2xl font-pacifico text-gray-800 dark:text-gray-400'>TeamPickle</h1>
             <ul className='flex items-center '>
               <li>
-              <BsFillMoonStarsFill onClick={()=> setDarkMode(!darkMode)}className='cursor-pointer text-2xl text-gray-800 dark:text-white'/>
+              {darkMode 
+              ? <BsFillSunFill onClick={()=> setDarkMode(!darkMode)}className='cursor-pointer text-2xl text-gray-800 dark:text-white'/> 
+              : <BsFillMoonStarsFill onClick={()=> setDarkMode(!darkMode)}className='cursor-pointer text-2xl text-gray-800 dark:text-white'/>}
               </li>
               <li>
               <a 
