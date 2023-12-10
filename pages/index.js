@@ -4,7 +4,7 @@ import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import Image from 'next/image';
 import peter_chen_avatar from '../public/peter_chen_avatar.png';
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import { useRouter } from 'next/router';
@@ -27,7 +27,32 @@ export default function Home() {
   //Router
   const router = useRouter();
   
-  
+  //Intersection observer
+  useEffect(() => {
+    // Check if the component is mounted on the client side
+    if (typeof window !== 'undefined') {
+      // Intersection observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      });
+
+      // Find your target elements and start observing
+      const hiddenElements = document.querySelectorAll('.hide');
+      hiddenElements.forEach((el) => observer.observe(el));
+
+      // Clean up the observer when the component is unmounted
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, []);
 
   // Formik logic
 
@@ -109,13 +134,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-
       </Head>
       <m.main 
       initial={{ opacity:0 }}
       animate={{ opacity:1 }}
       exit={{ opacity:0}}
-      className='bg-white px-10 md:px-20 lg:px-40 dark:bg-zinc-800'>
+      className='bg-white px-10 sm:px-20 md:px-30 lg:px-80 dark:bg-zinc-800'>
 
       {/* frontpage */}
         <section className='min-h-screen relative'>
@@ -164,22 +188,24 @@ export default function Home() {
             <Image src={peter_chen_avatar} alt="avatar"/>
           </div>
         </section>
-        <section>
+        
+        {/* My Tech Stacks */}
+        <section className='hide'>
           <div className='container mx-auto text-center my-20'>
             <h3 className='text-3xl pt-1 text-gray-800 dark:text-gray-400'>My Toolbox & Things I Can Do</h3>
-          <div className="flex flex-wrap justify-center items-center my-20">
+          <div className="flex flex-wrap justify-center items-center my-20 icons">
           {icons.map(createIcon)}
           </div>
           </div> 
         </section>
 
         {/* portfolio */}
-        <section>
+        <section className='hide'>
         <div className='text-center'>
           <h3 className='text-3xl py-1 text-gray-800 dark:text-gray-400'>A Selection Of My Recent Work</h3>
         </div>
         {/* card */} 
-        <div className='flex flex-col gap-10 py-20 lg:flex-row lg:flex-wrap'>
+        <div className='flex flex-col gap-10 py-20 lg:flex-row lg:flex-wrap projects'>
         {projects.map(createCard)}
         </div>
         </section>

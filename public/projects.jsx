@@ -4,26 +4,29 @@ import web3 from '/public/web3.png';
 import web4 from '/public/web4.png';
 import web5 from '/public/web5.png';
 import web6 from '/public/web6.png';
+// import web7 from '/public/web7.png';
+// import web8 from '/public/web8.png';
 
 const projects = [
     {
         id: 1,
         image: web1,
-        name: "Pokemon Wiki",
-        description: "I developed a comprehensive Pokemon encyclopedia utilizing the Pokemon API and React.js framework.",
-        techStack: ["React", "API"],
-        siteURL: "https://team-pickle-pokemonwiki.netlify.app/",
-        codeURL: "https://github.com/nonsense-bucket/pokemonAPI"
+        name: "Next ChatGPT (Coming soon...)",
+        description: "A personal AI assistant chatbot using OpenAI api.",
+        techStack: ["Typescript", "Next", "React", "Tailwind", "3S"],
+        siteURL: "",
+        codeURL: ""
     },
     {
         id: 2,
         image: web2,
-        name: "Advanced To-do List",
-        description: "This is a robust todo list application with comprehensive features such as adding, deleting, and changing the status of items. It comes with a filtering mechanism to efficiently organize tasks based on their status.",
-        techStack: ["React"],
-        siteURL: "https://team-pickle-better-to-do.netlify.app/",
-        codeURL: "https://github.com/nonsense-bucket/better_to_do"
+        name: "E-Commerce Dashboard (Coming soon...)",
+        description: "A feature-rich E-Commerce platform and Admin Dashboard using Next.js 13, ensuring seamless navigation and an exceptional user experience.",
+        techStack: ["Typescript","React", "Tailwind", "MongoDB", "NextAuth"],
+        siteURL: "",
+        codeURL: ""
     },
+   
     {
         id: 3,
         image: web3,
@@ -41,25 +44,44 @@ const projects = [
         techStack: ["React"],
         siteURL: "https://team-pickle-calculator.netlify.app/",
         codeURL: "https://github.com/nonsense-bucket/calculator-app"
-    },
+    }, 
     {
         id: 5,
         image: web5,
-        name: "A Cocktail Database",
-        description: "This is another project that I worked with APIs. It is an advanced cocktail database with integrated routing capabilities for seamless navigation between pages. Each cocktail variety is elegantly showcased on a comprehensive individual card.",
+        name: "Pokemon Wiki",
+        description: "I developed a comprehensive Pokemon encyclopedia utilizing the Pokemon API and React.js framework.",
         techStack: ["React", "API"],
-        siteURL: "https://team-pickle-cocktail-pedia.netlify.app/",
-        codeURL: "https://github.com/nonsense-bucket/cocktail-pedia"
+        siteURL: "https://team-pickle-pokemonwiki.netlify.app/",
+        codeURL: "https://github.com/nonsense-bucket/pokemonAPI"
     },
     {
         id: 6,
         image: web6,
-        name: "The Simon Game",
-        description: "A recreation of the classic Simon Game using vanilla javascript, jQuery and DOM manipulation.",
-        techStack: ["Javascript", "jQuery"],
-        siteURL: "https://team-pickle-simon-game.netlify.app/",
-        codeURL: "https://github.com/nonsense-bucket/simon-game"
+        name: "Advanced To-do List",
+        description: "This is a robust todo list application with comprehensive features such as adding, deleting, and changing the status of items. It comes with a filtering mechanism to efficiently organize tasks based on their status.",
+        techStack: ["React"],
+        siteURL: "https://team-pickle-better-to-do.netlify.app/",
+        codeURL: "https://github.com/nonsense-bucket/better_to_do"
     },
+    // {
+    //     id: 5,
+    //     image: web5,
+    //     name: "A Cocktail Database",
+    //     description: "This is another project that I worked with APIs. It is an advanced cocktail database with integrated routing capabilities for seamless navigation between pages. Each cocktail variety is elegantly showcased on a comprehensive individual card.",
+    //     techStack: ["React", "API"],
+    //     siteURL: "https://team-pickle-cocktail-pedia.netlify.app/",
+    //     codeURL: "https://github.com/nonsense-bucket/cocktail-pedia"
+    // },
+    // {
+    //     id: 6,
+    //     image: web6,
+    //     name: "The Simon Game",
+    //     description: "A recreation of the classic Simon Game using vanilla javascript, jQuery and DOM manipulation.",
+    //     techStack: ["Javascript", "jQuery"],
+    //     siteURL: "https://team-pickle-simon-game.netlify.app/",
+    //     codeURL: "https://github.com/nonsense-bucket/simon-game"
+    // },
+   
 ];
 
 
