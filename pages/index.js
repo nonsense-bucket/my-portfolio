@@ -82,11 +82,6 @@ export default function Home() {
       email: Yup.string().email("Invalid email").required("Email is required"),
       message: Yup.string().required("Message is required"),
     }),
-    // submit form
-    //   onSubmit: (values) => {
-    //   console.log(values);
-    //   router.push({pathname:'/success', query: values});
-    // },
   });
 
   //emailjs
@@ -226,7 +221,7 @@ export default function Home() {
             width="900"
             height="900"
             version="1.1"
-            className="absolute lg:ml-48 lg:mt-80 md:mt-72 md:scale-90 sm:mt-64 sm:ml-40 sm:scale-75 " //Add margin-top to create space between the image and SVG
+            className="absolute lg:ml-48 lg:mt-80 md:mt-72 md:scale-90 sm:mt-64 sm:ml-40 sm:scale-75 blob-animation" //Add margin-top to create space between the image and SVG
           >
             <g transform="translate(332.7709972129551 385.36372064997084)">
             <path id='blob1'
