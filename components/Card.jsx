@@ -17,10 +17,10 @@ function Card({id, image, name, description, techStack, siteURL, codeURL}){
             <div className='flex flex-col items-center justify-center'>
               <h3 className='text-2xl mt-10'>{name}</h3>
               <p className='hidden sm:block sm:text-sm sm:mt-4 sm:px-24'>{description}</p>
-              <p className='text-base mt-4'>Tech Stack:</p>
+              <p className='hidden sm text-base mt-4'>Tech Stack:</p>
               <div className="flex mt-2">
                 {techStack.map((tech, index)=> (
-                  <p className='text-sm px-1 mx-1 bg-gray-900 rounded' key={index}>{tech}</p>
+                  <p className='hidden sm text-sm px-1 mx-1 bg-gray-900 rounded' key={index}>{tech}</p>
                 ))}
                 
               </div>
