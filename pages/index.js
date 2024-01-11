@@ -25,17 +25,17 @@ export default function Home() {
   //Router
   const router = useRouter();
 
-  //Blob animation
-  useEffect(() => {
-    var tween = KUTE.fromTo(
-      '#blob1',
-      { path: '#blob1' },
-      { path: '#blob2' },
-      { repeat: 999, duration: 3000, yoyo: true }
-    );
+  // //Blob animation
+  // useEffect(() => {
+  //   var tween = KUTE.fromTo(
+  //     '#blob1',
+  //     { path: '#blob1' },
+  //     { path: '#blob2' },
+  //     { repeat: 999, duration: 3000, yoyo: true }
+  //   );
 
-    tween.start();
-  }, []);
+  //   tween.start();
+  // }, []);
 
 
   //Intersection observer
@@ -214,7 +214,7 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* blob animation */}
+          {/* blob animation
           <svg
             id="visual"
             viewBox="0 0 900 900"
@@ -235,7 +235,7 @@ export default function Home() {
               fill="#0891b2">
             </path>
             </g>
-          </svg>
+          </svg> */}
 
           <div className="relative mx-auto rounded-full w-80 h-80 my-16 overflow-hidden md:h-96 md:w-96">
             <Image src={peter_chen_avatar} alt="avatar" />
